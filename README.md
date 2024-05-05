@@ -1,7 +1,6 @@
 # Release By Changelog template
 
-[![Pipeline](https://lab.frogg.it/swepy/cicd-templates/release_by_changelog/badges/main/pipeline.svg)](https://lab.frogg.it/swepy/cicd-templates/release_by_changelog/-/pipelines)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://lab.frogg.it/swepy/cicd-templates/release_by_changelog/-/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://lab.frogg.it/swepy/cicd-templates/release-by-changelog/-/blob/main/LICENSE)
 
 ## Objective
 
