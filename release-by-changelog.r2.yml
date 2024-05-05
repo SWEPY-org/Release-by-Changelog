@@ -5,7 +5,6 @@ files:
 data:
     description: "Run release-by-changelog on your repository"
     icon: 💾
-    public: True
     labels:
     - Gitlab
     - Utilities
