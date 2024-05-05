@@ -1,0 +1,14 @@
+files:
+    template: release-by-changelog.yml
+    documentation: README.md
+    changelog: CHANGELOG.md
+data:
+    description: "Run release-by-changelog on your repository"
+    icon: 💾
+    public: True
+    labels:
+    - Gitlab
+    - Utilities
+    - Deploy
+    license: MIT
+    deprecated: False

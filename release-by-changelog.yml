@@ -1,0 +1,36 @@
+include:
+    -   remote: 'https://lab.frogg.it/swepy/cicd-templates/venv/-/raw/venv@1.0.0/venv.yml'
+
+python_venv:
+    rules:
+        -   when: never
+
+release_by_changelog_venv:
+    extends: python_venv
+    stage: build
+    variables:
+        PYTHON_SETUP: 'pip install release_by_changelog'
+        VENV_ARTIFACT_NAME: 'release_by_changelog_venv'
+    rules:
+        -   when: null
+
+ruff:
+    variables:
+        IMAGE_NAME: 'python'
+        IMAGE_TAG: 'latest'
+        IMAGE: '$IMAGE_NAME:$IMAGE_TAG'
+        PROJECT_PATH: '.'
+        RELEASE_BY_CHANGELOG: 'release_by_changelog'
+    image: $IMAGE
+    stage: test
+    before_script:
+        - source venv/bin/activate
+        - echo $PROJECT_PATH  # Debug
+        - cd $PROJECT_PATH
+        - pwd  # Debug
+    script:
+        - echo RELEASE_BY_CHANGELOG  # Debug
+        - $RELEASE_BY_CHANGELOG
+    needs:
+        -   job: release_by_changelog_venv
+            artifacts: true
