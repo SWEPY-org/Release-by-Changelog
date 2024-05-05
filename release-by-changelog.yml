@@ -34,3 +34,5 @@ ruff:
     needs:
         -   job: release_by_changelog_venv
             artifacts: true
+    rules:
+        -   if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
