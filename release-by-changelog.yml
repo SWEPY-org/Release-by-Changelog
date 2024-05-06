@@ -15,7 +15,7 @@ release_by_changelog_venv:
         -   when: null
         -   if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
 
-ruff:
+release_by_changelog:
     variables:
         IMAGE_NAME: 'python'
         IMAGE_TAG: 'latest'
