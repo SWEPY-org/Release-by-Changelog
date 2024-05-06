@@ -13,6 +13,7 @@ release_by_changelog_venv:
         VENV_ARTIFACT_NAME: 'release_by_changelog_venv'
     rules:
         -   when: null
+        -   if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
 
 ruff:
     variables:

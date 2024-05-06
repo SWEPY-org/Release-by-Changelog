@@ -4,6 +4,11 @@ All notable changes to this job will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+
+* `release-by-changelog` venv will now run only on default branch except if configured
+  otherwise
+
 ## [0.2.1] - 2024-05-06
 
 ### Fixed
