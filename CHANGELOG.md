@@ -4,11 +4,15 @@ All notable changes to this job will be documented in this file.
 
 ## [Unreleased]
 
+### Fixed
+
+* venv job name is fixed
+
 ## [0.2.0] - 2024-05-06
 
 ### Changed
 
-* Pipeline will now run only on default branch except if configured otherwise.
+* Pipeline will now run only on default branch except if configured otherwise
 
 ## [0.1.1] - 2024-05-06
 
