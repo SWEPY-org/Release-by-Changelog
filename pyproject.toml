@@ -1,6 +1,6 @@
 [tool.bumpversion]
 allow-dirty = true
-commit = false
+commit = true
 config-file = "pyproject.toml"
 current_version = "0.2.1"
 parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
