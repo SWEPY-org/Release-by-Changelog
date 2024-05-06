@@ -1,12 +1,12 @@
 include:
     -   remote: 'https://lab.frogg.it/swepy/cicd-templates/venv/-/raw/venv@1.0.0/venv.yml'
 
-python_venv:
+venv:
     rules:
         -   when: never
 
 release_by_changelog_venv:
-    extends: python_venv
+    extends: venv
     stage: build
     variables:
         PYTHON_SETUP: 'pip install release_by_changelog'
