@@ -4,6 +4,12 @@ All notable changes to this job will be documented in this file.
 
 ## [Unreleased]
 
+## [0.2.3] - 2024-05-06
+
+### Fixed
+
+* Job name is now set to `release_by_changelog`
+
 ## [0.2.2] - 2024-05-06
 
 ### Changed
