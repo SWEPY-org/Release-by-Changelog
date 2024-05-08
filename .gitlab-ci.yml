@@ -1,7 +1,2 @@
-stages:
-    - build
-    - test
-    - deploy
-
 include:
-    -   remote: 'https://gitlab.com/r2devops/hub/-/raw/template_release@0.2.1/jobs/template_release/template_release.yml'
+    -   remote: 'https://gitlab.com/r2devops/hub/-/raw/template_release@0.5.2/jobs/template_release/template_release.yml'
