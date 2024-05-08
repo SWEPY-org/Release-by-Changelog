@@ -1,10 +1,6 @@
 include:
     -   remote: 'https://lab.frogg.it/swepy/cicd-templates/venv/-/raw/venv@1.0.0/venv.yml'
 
-venv:
-    rules:
-        -   when: never
-
 release_by_changelog_venv:
     extends: venv
     stage: build
@@ -12,8 +8,11 @@ release_by_changelog_venv:
         PYTHON_SETUP: 'pip install release_by_changelog'
         VENV_ARTIFACT_NAME: 'release_by_changelog_venv'
     rules:
-        -   when: null
         -   if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+
+venv:
+    rules:
+        -   when: never
 
 release_by_changelog:
     variables:
@@ -30,7 +29,7 @@ release_by_changelog:
         - cd $PROJECT_PATH
         - pwd  # Debug
     script:
-        - echo RELEASE_BY_CHANGELOG  # Debug
+        - echo $RELEASE_BY_CHANGELOG  # Debug
         - $RELEASE_BY_CHANGELOG
     needs:
         -   job: release_by_changelog_venv
