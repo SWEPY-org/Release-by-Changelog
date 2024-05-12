@@ -1,2 +1,4 @@
 include:
-    -   remote: 'https://gitlab.com/r2devops/hub/-/raw/template_release@0.5.2/jobs/template_release/template_release.yml'
+  - project: 'swepy/cicd-templates/release-by-changelog'
+    ref: 'main'
+    file: 'release-by-changelog.yml'
