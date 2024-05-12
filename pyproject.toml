@@ -1,5 +1,4 @@
 [tool.bumpversion]
-allow-dirty = true
 commit = true
 config-file = "pyproject.toml"
 current_version = "0.3.3"
@@ -12,7 +11,6 @@ serialize = [
 tag = false
 
 [[tool.bumpversion.files]]
-allow-dirty = true
 filename = "CHANGELOG.md"
 replace = """## [Unreleased]
 
@@ -20,3 +18,9 @@ replace = """## [Unreleased]
 """
 search = """## [Unreleased]
 """
+
+[[tool.bumpversion.files]]
+allow-dirty = true
+filename = "README.md"
+replace = "{new_version}"
+search = "{current_version}"
