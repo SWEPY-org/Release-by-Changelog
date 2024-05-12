@@ -20,7 +20,7 @@ As a Template:
 ```yaml
 include:
     -   project: 'swepy/cicd-templates/release-by-changelog'
-        ref: '0.3.3'
+        ref: '0.3.4'
         file: 'templates/release-by-changelog.yml'
 ```
 
@@ -29,7 +29,7 @@ As a Component:
 ```yaml
 # As a Component
 include:
-    -   component: $CI_SERVER_FQDN/swepy/cicd-templates/release-by-changelog/release-by-changelog@0.3.3
+    -   component: $CI_SERVER_FQDN/swepy/cicd-templates/release-by-changelog/release-by-changelog@0.3.4
 ```
 
 ### Customize job
