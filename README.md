@@ -15,7 +15,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Add the following to your `.gitlab-ci.yml` file.
 
-As a Template:
+As a remote Template (recommended):
+
+```yaml
+include:
+    -   remote: 'https://gitlab.com/swepy/cicd-templates/release-by-changelog/-/raw/release-by-changelog@0.4.0/release-by-changelog.yml'
+```
+
+As a local Template (if the template is local to the instance):
 
 ```yaml
 include:
@@ -24,10 +31,10 @@ include:
         file: 'templates/release-by-changelog.yml'
 ```
 
-As a Component:
+As a Component ([beta](https://gitlab.com/gitlab-org/gitlab/-/issues/407556) and if the
+component is local to the instance):
 
 ```yaml
-# As a Component
 include:
     -   component: $CI_SERVER_FQDN/swepy/cicd-templates/release-by-changelog/release-by-changelog@0.4.0
 ```
