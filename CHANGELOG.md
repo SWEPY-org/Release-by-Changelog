@@ -7,7 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+* r2 template path
+
 ## [0.3.1] - 2024-05-12
+
+### Fixed
+
+* Template path
 
 ## [0.3.0] - 2024-05-12
 

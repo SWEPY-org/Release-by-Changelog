@@ -1,5 +1,5 @@
 files:
-    template: release-by-changelog.yml
+    template: templates/release-by-changelog.yml
     documentation: README.md
     changelog: CHANGELOG.md
 data:
