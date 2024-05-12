@@ -1,10 +1,13 @@
 release_by_changelog:
     variables:
-        IMAGE_NAME: 'registry.gitlab.com/gitlab-org/release-cli'
-        IMAGE_TAG: 'latest'
-        IMAGE: '$IMAGE_NAME:$IMAGE_TAG'
         CHANGELOG_FILEPATH: 'CHANGELOG.md'
-    image: $IMAGE
+        PREFIX: ''
+        SUFFIX: ''
+        TAG_PREFIX: $PREFIX
+        TAG_SUFFIX: $SUFFIX
+        NAME_PREFIX: $PREFIX
+        NAME_SUFFIX: $SUFFIX
+    image: registry.gitlab.com/gitlab-org/release-cli
     stage: test
     script:
         # Use grep to find version headers and store them in a variable
@@ -55,7 +58,11 @@ release_by_changelog:
         - 'echo "Text:"'
         - 'echo "$text"'
 
+        # Set the tag and name
+        - 'tag="$TAG_PREFIX$version$TAG_SUFFIX"'
+        - 'name="$NAME_PREFIX$version$NAME_SUFFIX"'
+
         # Create the release
-        - 'release-cli create --name "$version" --tag-name "$version" --description "$text" --released-at "$formatted_date"'
+        - 'release-cli create --name "$name" --tag-name "$tag" --description "$text" --released-at "$formatted_date"'
     rules:
         -   if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
