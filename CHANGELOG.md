@@ -9,13 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-* r2 template path
+* R2 template path now pointing to the correct folder
+* When no text is found in the version description, the description is not the following
+  header anymore
 
 ## [0.3.1] - 2024-05-12
 
 ### Fixed
 
-* Template path
+* Template path now pointing to the correct folder
 
 ## [0.3.0] - 2024-05-12
 
