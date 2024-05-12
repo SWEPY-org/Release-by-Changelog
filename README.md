@@ -4,20 +4,49 @@
 
 ## Objective
 
-Run release_by_changelog on your project.
+Publish a new release based on the content of the `CHANGELOG.md` file.
+The file must follow the [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
+format and each release must adhere
+to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## How to use it
 
-1. Include the release_by_changelog template in your GitLab CI/CD configuration.
-2. If you need to customize the job, refer to
-   the [jobs customization](https://docs.r2devops.io/get-started/use-templates/#job-templates-customization)
-   documentation.
+### Include the component/template
+
+Add the following to your `.gitlab-ci.yml` file.
+
+As a Template:
+
+```yaml
+include:
+    -   project: 'swepy/cicd-templates/release-by-changelog'
+        ref: '0.3.4'
+        file: 'templates/release-by-changelog.yml'
+```
+
+As a Component:
+
+```yaml
+# As a Component
+include:
+    -   component: $CI_SERVER_FQDN/swepy/cicd-templates/release-by-changelog/release-by-changelog@0.3.4
+```
+
+### Customize job
+
+You can customize the job by overriding specific keys. For example:
+
+```yaml
+release-by-changelog:
+    stage: release
+    variables:
+        CHANGELOG_FILEPATH: "docs/CHANGELOG.md"
+```
 
 ## Variables
 
-| Name                 | Description                            | Default                                        |
-|----------------------|----------------------------------------|------------------------------------------------|
-| `IMAGE_NAME`         | The default name for the docker image. | `"registry.gitlab.com/gitlab-org/release-cli"` |
-| `IMAGE_TAG`          | The default tag for the docker image.  | `"latest"`                                     |
-| `IMAGE`              | The default docker image name.         | `"$IMAGE_NAME:$IMAGE_TAG"`                     |
-| `CHANGELOG_FILEPATH` | The path to the CHANGELOG.md file.     | `"CHANGELOG.md"`                               |
+You can customize the job by overriding the following variables:
+
+| Name                 | Description                        | Default          |
+|----------------------|------------------------------------|------------------|
+| `CHANGELOG_FILEPATH` | The path to the CHANGELOG.md file. | `"CHANGELOG.md"` |
