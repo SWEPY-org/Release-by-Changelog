@@ -2,7 +2,7 @@
 allow-dirty = true
 commit = true
 config-file = "pyproject.toml"
-current_version = "0.2.4"
+current_version = "0.3.0"
 parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
 replace = "{new_version}"
 search = "{current_version}"
@@ -20,34 +20,3 @@ replace = """## [Unreleased]
 """
 search = """## [Unreleased]
 """
-
-[tool.hatch.envs.default.scripts]
-bump-major = "bump-my-version bump major"
-bump-minor = "bump-my-version bump minor"
-bump-patch = "bump-my-version bump patch"
-install = [
-    "pip-upgrade",
-    "pip install bump-my-version toml-sort",
-]
-pip-upgrade = "pip install --upgrade pip"
-toml = "toml-sort --in-place pyproject.toml"
-
-[tool.tomlsort]
-check = false
-ignore_case = true
-in_place = true
-no_block_comments = true
-no_comments = true
-no_footer_comments = true
-no_header_comments = true
-no_inline_comments = true
-no_sort_tables = true
-sort_inline_arrays = false
-sort_inline_tables = true
-sort_table_keys = true
-spaces_before_inline_comment = 2
-spaces_indent_inline_array = 4
-trailing_comma_inline_array = true
-
-[tool.tomlsort.overrides."project"]
-table_keys = false

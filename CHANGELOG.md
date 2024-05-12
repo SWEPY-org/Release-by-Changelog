@@ -7,7 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-...
+## [0.3.0] - 2024-05-12
+
+### Changed
+
+* Do not require Python, use release-cli
+
+### Removed
+
+* venv job
 
 ## [0.2.4] - 2024-05-08
 

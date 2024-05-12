@@ -15,10 +15,9 @@ Run release_by_changelog on your project.
 
 ## Variables
 
-| Name                   | Description                              | Default                    |
-|------------------------|------------------------------------------|----------------------------|
-| `IMAGE_NAME`           | The default name for the docker image.   | `"python"`                 |
-| `IMAGE_TAG`            | The default tag for the docker image.    | `"latest"`                 |
-| `IMAGE`                | The default docker image name.           | `"$IMAGE_NAME:$IMAGE_TAG"` |
-| `PROJECT_PATH`         | The path to the project root directory.  | `"."`                      |
-| `RELEASE_BY_CHANGELOG` | The command to run release_by_changelog. | `"release_by_changelog"`   |
+| Name                 | Description                            | Default                                        |
+|----------------------|----------------------------------------|------------------------------------------------|
+| `IMAGE_NAME`         | The default name for the docker image. | `"registry.gitlab.com/gitlab-org/release-cli"` |
+| `IMAGE_TAG`          | The default tag for the docker image.  | `"latest"`                                     |
+| `IMAGE`              | The default docker image name.         | `"$IMAGE_NAME:$IMAGE_TAG"`                     |
+| `CHANGELOG_FILEPATH` | The path to the CHANGELOG.md file.     | `"CHANGELOG.md"`                               |
