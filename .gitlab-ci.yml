@@ -1,4 +1,4 @@
 include:
   - project: 'swepy/cicd-templates/release-by-changelog'
     ref: 'main'
-    file: 'release-by-changelog.yml'
+    file: 'templates/release-by-changelog.yml'
