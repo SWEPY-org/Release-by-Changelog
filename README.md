@@ -19,7 +19,7 @@ As a remote Template (recommended):
 
 ```yaml
 include:
-    -   remote: 'https://gitlab.com/swepy/cicd-templates/release-by-changelog/-/raw/release-by-changelog@0.4.1/release-by-changelog.yml'
+    -   remote: 'https://gitlab.com/swepy/cicd-templates/release-by-changelog/-/raw/0.4.1/templates/release-by-changelog.yml'
 ```
 
 As a local Template (if the template is local to the instance):
