@@ -8,7 +8,7 @@ release_by_changelog:
         NAME_PREFIX: $PREFIX
         NAME_SUFFIX: $SUFFIX
     image: registry.gitlab.com/gitlab-org/release-cli
-    stage: test
+    stage: deploy
     script:
         # Use grep to find version headers and store them in a variable
         - 'headers=$(grep -nE "^## \[([0-9]+)\.([0-9]+)\.([0-9]+)(-[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?\] - [0-9]{4}-[0-9]{2}-[0-9]{2}$" "$CHANGELOG_FILEPATH")'
