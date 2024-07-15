@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* Doc about supported domains (gitlab.com and froggit.fr)
+
 ## [0.4.3] - 2024-06-26
 
 ### Fixed
