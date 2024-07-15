@@ -1,4 +1,4 @@
-# Release By Changelog template
+# Release By Changelog
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://lab.frogg.it/swepy/cicd-templates/release-by-changelog/-/blob/main/LICENSE)
 
@@ -31,6 +31,9 @@ include:
         file: 'templates/release-by-changelog.yml'
 ```
 
+[![Supported by GitLab.com](https://img.shields.io/badge/Supported_by-GitLab.com-orange)](https://gitlab.com)
+[![Supported by Frogg.it](https://img.shields.io/badge/Supported_by-Frogg.it-green)](https://froggit.fr/)
+
 As a Component ([beta](https://gitlab.com/gitlab-org/gitlab/-/issues/407556) and if the
 component is local to the instance):
 
@@ -38,6 +41,9 @@ component is local to the instance):
 include:
     -   component: $CI_SERVER_FQDN/swepy/cicd-templates/release-by-changelog/release-by-changelog@0.4.3
 ```
+
+[![Supported by GitLab.com](https://img.shields.io/badge/Supported_by-GitLab.com-orange)](https://gitlab.com)
+[![Supported by Frogg.it](https://img.shields.io/badge/Supported_by-Frogg.it-green)](https://froggit.fr/)
 
 ### Customize job
 
