@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.4] - 2024-07-16
+
+* Doc about supported domains (gitlab.com and froggit.fr)
+* Version of gitlab release-cli now fixed
+
 ## [0.4.3] - 2024-06-26
 
 ### Fixed
