@@ -7,7 +7,7 @@ release_by_changelog:
         TAG_SUFFIX: $SUFFIX
         NAME_PREFIX: $PREFIX
         NAME_SUFFIX: $SUFFIX
-    image: registry.gitlab.com/gitlab-org/release-cli
+    image: registry.gitlab.com/gitlab-org/release-cli:v0.18.0
     stage: deploy
     script:
         # Use grep to find version headers and store them in a variable
