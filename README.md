@@ -19,7 +19,7 @@ As a remote Template (recommended):
 
 ```yaml
 include:
-    -   remote: 'https://gitlab.com/swepy/cicd-templates/release-by-changelog/-/raw/0.4.3/templates/release-by-changelog.yml'
+    -   remote: 'https://gitlab.com/swepy/cicd-templates/release-by-changelog/-/raw/0.4.4/templates/release-by-changelog.yml'
 ```
 
 As a local Template (if the template is local to the instance):
@@ -27,7 +27,7 @@ As a local Template (if the template is local to the instance):
 ```yaml
 include:
     -   project: 'swepy/cicd-templates/release-by-changelog'
-        ref: '0.4.3'
+        ref: '0.4.4'
         file: 'templates/release-by-changelog.yml'
 ```
 
@@ -39,7 +39,7 @@ component is local to the instance):
 
 ```yaml
 include:
-    -   component: $CI_SERVER_FQDN/swepy/cicd-templates/release-by-changelog/release-by-changelog@0.4.3
+    -   component: $CI_SERVER_FQDN/swepy/cicd-templates/release-by-changelog/release-by-changelog@0.4.4
 ```
 
 [![Supported by GitLab.com](https://img.shields.io/badge/Supported_by-GitLab.com-orange)](https://gitlab.com)
