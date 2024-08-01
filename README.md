@@ -15,35 +15,24 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Add the following to your `.gitlab-ci.yml` file.
 
-As a remote Template (recommended):
+As a Component (recommended) if the component is supported
+or [mirrored](https://docs.gitlab.com/ee/user/project/repository/mirror/pull.html) by
+your instance:
 
 ```yaml
 include:
-    -   remote: 'https://gitlab.com/swepy/cicd-templates/release-by-changelog/-/raw/0.4.4/templates/release-by-changelog.yml'
-```
-
-As a local Template (if the template is local to the instance):
-
-```yaml
-include:
-    -   project: 'swepy/cicd-templates/release-by-changelog'
-        ref: '0.4.4'
-        file: 'templates/release-by-changelog.yml'
+    -   component: $CI_SERVER_FQDN/swepy/cicd-templates/release-by-changelog/release-by-changelog@0.4.5
 ```
 
 [![Supported by GitLab.com](https://img.shields.io/badge/Supported_by-GitLab.com-orange)](https://gitlab.com)
 [![Supported by Frogg.it](https://img.shields.io/badge/Supported_by-Frogg.it-green)](https://froggit.fr/)
 
-As a Component ([beta](https://gitlab.com/gitlab-org/gitlab/-/issues/407556) and if the
-component is local to the instance):
+As a remote Template if the component is not supported or mirrored by your instance:
 
 ```yaml
 include:
-    -   component: $CI_SERVER_FQDN/swepy/cicd-templates/release-by-changelog/release-by-changelog@0.4.4
+    -   remote: 'https://gitlab.com/swepy/cicd-templates/release-by-changelog/-/raw/0.4.5/templates/release-by-changelog.yml'
 ```
-
-[![Supported by GitLab.com](https://img.shields.io/badge/Supported_by-GitLab.com-orange)](https://gitlab.com)
-[![Supported by Frogg.it](https://img.shields.io/badge/Supported_by-Frogg.it-green)](https://froggit.fr/)
 
 ### Customize job
 
@@ -99,7 +88,8 @@ section and the version number must be bumped.
 If you are using [bump_my_version](https://pypi.org/project/bump-my-version/), you can
 automate the update of the `Unreleased` section.
 
-To do so, you need this configuration in your `pyproject.toml` file:
+To do so, you need this configuration in your `.bumpversion.toml` or `pyproject.toml`
+file:
 
 ```toml
 [[tool.bumpversion.files]]
@@ -115,11 +105,11 @@ search = """## [Unreleased]
 Then you can bump the version by running the following command:
 
 ```shell
-bump_my_version bump <MAJOR|MINOR|PATCH>
+bump-my-version bump <MAJOR|MINOR|PATCH>
 ```
 
 You'll find a full example of the `bump_my_version`
-configuration [here](pyproject.toml).
+configuration [here](.bumpversion.toml).
 
 ### Upcoming and Historical releases
 
