@@ -1,6 +1,6 @@
 release_by_changelog:
     variables:
-        CHANGELOG_FILEPATH: 'CHANGELOG.md'
+        CHANGELOG_FILEPATH: CHANGELOG.md
         PREFIX: ''
         SUFFIX: ''
         TAG_PREFIX: $PREFIX
@@ -17,52 +17,51 @@ release_by_changelog:
         - 'first_line=$(echo "$headers" | head -1 | cut -d: -f1)'
 
         # Check if we have a header, else exit
-        - 'if [ -z "$first_line" ]; then'
-        - '    echo "No version headers found."'
-        - '    exit 1'
-        - 'fi'
+        - if [ -z "$first_line" ]; then
+        -     echo "No version headers found."
+        -     exit 1
+        - fi
 
         # Extract version and date from the first header
-        - 'version=$(echo "$headers" | head -1 | grep -oE "\[([0-9]+)\.([0-9]+)\.([0-9]+)\]" | tr -d "[]")'
-        - 'date=$(echo "$headers" | head -1 | grep -oE "[0-9]{4}-[0-9]{2}-[0-9]{2}")'
+        - version=$(echo "$headers" | head -1 | grep -oE "\[([0-9]+)\.([0-9]+)\.([0-9]+)\]" | tr -d "[]")
+        - date=$(echo "$headers" | head -1 | grep -oE "[0-9]{4}-[0-9]{2}-[0-9]{2}")
         # If date is different from today, format it
-        - 'if [ "$date" != "$(date +%Y-%m-%d)" ]; then'
-        - '    formatted_date=$(date -u -d "$date" +"%Y-%m-%dT%H:%M:%SZ")'
-        - 'fi'
+        - if [ "$date" != "$(date +%Y-%m-%d)" ]; then
+        -     formatted_date=$(date -u -d "$date" +"%Y-%m-%dT%H:%M:%SZ")
+        - fi
 
         # Extract second header line number for end of text range
         - 'second_line=$(echo "$headers" | sed -n "2p" | cut -d: -f1)'
 
         # Determine end line
-        - 'if [ -n "$second_line" ]; then'
-        - '    end_line=$((second_line - 1))'
-        - 'else'
-        - '    # If there s no second header, use the end of the file'
-        - '    end_line=$(wc -l < "$CHANGELOG_FILEPATH")'
-        - 'fi'
+        - if [ -n "$second_line" ]; then
+        -     end_line=$((second_line - 1))
+        - else
+               # If there's no second header, use the end of the file
+        -     end_line=$(wc -l < "$CHANGELOG_FILEPATH")
+        - fi
 
-        - 'start_line=$((first_line + 2))'
-        - 'if [ "$start_line" -le "$end_line" ]; then'
+        - start_line=$((first_line + 2))
+        - if [ "$start_line" -le "$end_line" ]; then
         # Use sed to extract the text between the first and the potential second version header
-        - '    text=$(sed -n "$start_line,$end_line p" "$CHANGELOG_FILEPATH")'
-        - '    echo "Text:"'
-        - '    echo "$text"'
-        - 'else'
-        - '    echo "No text to extract, start line exceeds end line."'
-        - 'fi'
+        -     text=$(sed -n "$start_line,$end_line p" "$CHANGELOG_FILEPATH")
+        -     echo "Text = $text"
+        - else
+        -     echo "No text to extract, start line exceeds end line."
+        - fi
 
         # Output the results
-        - 'echo "Version: $version"'
-        - 'echo "Date: $date"'
-        - 'echo "Formatted Date: $formatted_date"'
-        - 'echo "Text:"'
-        - 'echo "$text"'
+        - echo "Version = $version"
+        - echo "Date = $date"
+        - echo "Formatted Date = $formatted_date"
+        - echo "Text:"
+        - echo "$text"
 
         # Set the tag and name
-        - 'tag="$TAG_PREFIX$version$TAG_SUFFIX"'
-        - 'name="$NAME_PREFIX$version$NAME_SUFFIX"'
+        - tag="$TAG_PREFIX$version$TAG_SUFFIX"
+        - name="$NAME_PREFIX$version$NAME_SUFFIX"
 
         # Create the release
-        - 'release-cli create --name "$name" --tag-name "$tag" --description "$text" --released-at "$formatted_date"'
+        - release-cli create --name "$name" --tag-name "$tag" --description "$text" --released-at "$formatted_date"
     rules:
-        -   if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+        -   if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
