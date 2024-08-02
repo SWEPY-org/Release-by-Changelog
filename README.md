@@ -21,7 +21,7 @@ your instance:
 
 ```yaml
 include:
-    -   component: $CI_SERVER_FQDN/swepy/cicd-templates/release-by-changelog/release-by-changelog@0.4.5
+    -   component: $CI_SERVER_FQDN/swepy/cicd-templates/release-by-changelog/release-by-changelog@0.4.6
 ```
 
 [![Supported by GitLab.com](https://img.shields.io/badge/Supported_by-GitLab.com-orange)](https://gitlab.com)
@@ -31,7 +31,7 @@ As a remote Template if the component is not supported or mirrored by your insta
 
 ```yaml
 include:
-    -   remote: 'https://gitlab.com/swepy/cicd-templates/release-by-changelog/-/raw/0.4.5/templates/release-by-changelog.yml'
+    -   remote: 'https://gitlab.com/swepy/cicd-templates/release-by-changelog/-/raw/0.4.6/templates/release-by-changelog.yml'
 ```
 
 ### Customize job
