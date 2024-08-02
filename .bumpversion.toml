@@ -21,5 +21,3 @@ search = """## [Unreleased]
 [[tool.bumpversion.files]]
 allow-dirty = true
 filename = "README.md"
-replace = "{new_version}"
-search = "{current_version}"
