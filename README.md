@@ -15,7 +15,7 @@ Add the following to your `.gitlab-ci.yml` file:
 
 ```yaml
 include:
-  - component: $CI_SERVER_FQDN/swepy/cicd-templates/release-by-changelog/release-by-changelog@0.4.7
+  - component: $CI_SERVER_FQDN/swepy/cicd-templates/release-by-changelog/release-by-changelog@1.0.0
 ```
 
 > ⚠️ On gitlab <16.10, use `$CI_SERVER_FQDN:$CI_SERVER_PORT` instead of `$CI_SERVER_FQDN`.
@@ -31,7 +31,7 @@ For self-hosted instances, you need to import the component as a remote template
 
 ```yaml
 include:
-  - remote: 'https://gitlab.com/swepy/cicd-templates/release-by-changelog/-/raw/0.4.7/templates/release-by-changelog.yml'
+  - remote: 'https://gitlab.com/swepy/cicd-templates/release-by-changelog/-/raw/1.0.0/templates/release-by-changelog.yml'
 ```
 
 If you want to use semantic version ranges, you need to do a [mirror](https://docs.gitlab.com/ee/user/project/repository/mirror/pull.html) of the repository and rely on the component include.
@@ -63,7 +63,7 @@ Example of configuration with remote template:
 
 ```yaml
 include:
-  - remote: 'https://gitlab.com/swepy/cicd-templates/release-by-changelog/-/raw/0.4.7/templates/release-by-changelog.yml'
+  - remote: 'https://gitlab.com/swepy/cicd-templates/release-by-changelog/-/raw/1.0.0/templates/release-by-changelog.yml'
     inputs:
       stage: release
       prefix: version-
@@ -75,7 +75,7 @@ Using variables, you have access to more granular configuration. Example:
 
 ```yaml
 include:
-  - component: $CI_SERVER_FQDN/swepy/cicd-templates/release-by-changelog/release-by-changelog@0.4.7
+  - component: $CI_SERVER_FQDN/swepy/cicd-templates/release-by-changelog/release-by-changelog@1.0.0
 
 release-by-changelog:
   variables:
