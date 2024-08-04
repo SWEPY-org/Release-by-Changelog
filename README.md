@@ -53,7 +53,7 @@ Example of configuration with local component:
 
 ```yaml
 include:
-  - component: $CI_SERVER_HOST/swepy/cicd-templates/release-by-changelog/release-by-changelog@trunk
+  - component: $CI_SERVER_HOST/swepy/cicd-templates/release-by-changelog/release-by-changelog@1.0.0
     inputs:
       stage: release
       prefix: version-
