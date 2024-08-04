@@ -1,4 +1,2 @@
 include:
-  - project: 'swepy/cicd-templates/release-by-changelog'
-    ref: 'main'
-    file: 'templates/release-by-changelog.yml'
+    -   component: $CI_SERVER_HOST/swepy/cicd-templates/release-by-changelog/release-by-changelog@main
