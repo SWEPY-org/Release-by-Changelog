@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+* Support of [inputs](https://docs.gitlab.com/ee/ci/yaml/inputs.html)
+
 ## [0.4.7] - 2024-08-04
 
 * Misc update of the project
